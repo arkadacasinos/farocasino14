@@ -34,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="ru" className="bg-[#101c2b]">
       <head>
+        <meta name="yandex-verification" content="08c00d9b4c813bba" />
         <meta name="yandex-verification" content="faro-casino-content" />
         <meta name="format-detection" content="telephone=no" />
         <link rel="canonical" href="https://farocasino14.vercel.app/" />
