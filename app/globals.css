@@ -1,0 +1,103 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@theme inline {
+  --color-background: var(--faro-ink);
+  --color-foreground: var(--faro-paper);
+  --font-sans: 'Geist', 'Arial', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+}
+
+:root {
+  --faro-ink: #101c2b;
+  --faro-navy: #172941;
+  --faro-paper: #f5f2e9;
+  --faro-gold: #e3b65a;
+  --faro-muted: #9aa8b6;
+  --faro-line: rgba(245, 242, 233, .15);
+  --faro-radius: 1rem;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--faro-ink); scroll-behavior: smooth; }
+body { margin: 0; background: var(--faro-ink); color: var(--faro-paper); font-family: Arial, sans-serif; }
+a { color: inherit; text-decoration: none; }
+
+.faro-shell { min-height: 100vh; overflow: hidden; }
+.faro-topbar { align-items: center; border-bottom: 1px solid var(--faro-line); display: flex; justify-content: space-between; margin: 0 auto; max-width: 1320px; padding: 1.25rem 1.25rem; }
+.faro-brand { align-items: center; display: inline-flex; font-size: .9rem; gap: .55rem; letter-spacing: .02em; }
+.faro-brand b { color: var(--faro-gold); font-weight: 500; }
+.faro-mark { color: var(--faro-gold); font-size: 1rem; }
+.faro-nav { display: none; gap: 1.75rem; color: var(--faro-muted); font-size: .78rem; }
+.faro-nav a:hover, .faro-header-link:hover, .faro-text-link:hover { color: var(--faro-gold); }
+.faro-header-link { color: var(--faro-gold); font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; }
+.faro-header-link span, .faro-text-link span { margin-left: .35rem; }
+
+.faro-hero { display: grid; gap: 2.5rem; margin: 0 auto; max-width: 1320px; padding: 4.5rem 1.25rem 5rem; }
+.faro-kicker, .faro-section-label { color: var(--faro-gold); font-size: .68rem; letter-spacing: .14em; margin: 0 0 1.4rem; text-transform: uppercase; }
+.faro-kicker { align-items: center; display: flex; gap: .65rem; }
+.faro-kicker span { background: var(--faro-gold); border-radius: 50%; height: .45rem; width: .45rem; }
+.faro-hero h1 { font-size: clamp(3rem, 13vw, 7.5rem); font-weight: 400; letter-spacing: -.07em; line-height: .92; margin: 0; max-width: 780px; text-wrap: balance; }
+.faro-lead { color: var(--faro-muted); font-size: 1rem; line-height: 1.6; margin: 2rem 0 0; max-width: 420px; }
+.faro-actions { align-items: center; display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: 2rem; }
+.faro-primary { background: var(--faro-gold); border-radius: .35rem; color: var(--faro-ink); display: inline-flex; font-size: .76rem; font-weight: 700; gap: 1.2rem; padding: .9rem 1.15rem; text-transform: uppercase; }
+.faro-primary:hover { background: var(--faro-paper); }
+.faro-text-link { color: var(--faro-paper); font-size: .78rem; }
+.faro-table-art { background: var(--faro-navy); border: 1px solid rgba(227,182,90,.35); border-radius: 1.3rem; min-height: 300px; overflow: hidden; position: relative; }
+.faro-table-art::before { border: 1px solid rgba(227,182,90,.13); border-radius: 50%; content: ''; height: 280px; left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 280px; }
+.faro-sun { color: var(--faro-gold); font-size: 2rem; left: 50%; position: absolute; top: 20%; transform: translateX(-50%); }
+.faro-card { align-items: center; box-shadow: .8rem 1rem 1.2rem rgba(0,0,0,.25); display: flex; flex-direction: column; height: 140px; justify-content: space-between; padding: .7rem; position: absolute; width: 96px; }
+.faro-card-back { background: var(--faro-gold); color: var(--faro-ink); left: calc(50% - 70px); top: 33%; transform: rotate(-12deg); }
+.faro-card-back::before { border: 1px solid var(--faro-ink); content: ''; inset: .45rem; position: absolute; }
+.faro-card-back span { font-size: 2.2rem; margin-top: 2.5rem; position: relative; }
+.faro-card-front { background: var(--faro-paper); color: var(--faro-ink); left: calc(50% - 18px); top: 30%; transform: rotate(9deg); }
+.faro-card-front small, .faro-card-front i { align-self: flex-start; font-size: 1rem; font-style: normal; }
+.faro-card-front strong { font-size: 3.5rem; font-weight: 400; }
+.faro-card-front i { align-self: flex-end; transform: rotate(180deg); }
+.faro-art-caption { bottom: 1.2rem; color: var(--faro-muted); display: flex; font-size: .62rem; justify-content: space-between; left: 1.25rem; letter-spacing: .1em; position: absolute; right: 1.25rem; }
+
+.faro-intro, .faro-keywords, .faro-checklist, .faro-footer { margin: 0 auto; max-width: 1320px; padding: 4rem 1.25rem; }
+.faro-intro { border-top: 1px solid var(--faro-line); display: grid; gap: 2rem; }
+.faro-intro h2, .faro-section-heading h2, .faro-checklist h2 { font-size: clamp(2rem, 6vw, 4.2rem); font-weight: 400; letter-spacing: -.05em; line-height: 1; margin: 0; max-width: 640px; text-wrap: balance; }
+.faro-intro p:not(.faro-section-label), .faro-section-heading > p, .faro-note p { color: var(--faro-muted); font-size: .95rem; line-height: 1.65; margin: 1.25rem 0 0; max-width: 600px; }
+.faro-note { border-left: 1px solid var(--faro-gold); display: flex; gap: 1rem; padding-left: 1rem; }
+.faro-note span { color: var(--faro-gold); }
+.faro-note p { margin: 0; }
+.faro-keywords { background: var(--faro-paper); color: var(--faro-ink); max-width: none; }
+.faro-section-heading { margin: 0 auto 3rem; max-width: 1270px; }
+.faro-section-heading .faro-section-label { color: #8a6723; }
+.faro-section-heading > p { color: #66707a; margin-top: 1.5rem; }
+.faro-keyword-grid { display: grid; gap: 0; margin: 0 auto; max-width: 1270px; }
+.faro-entry { border-top: 1px solid rgba(16,28,43,.17); display: grid; gap: .85rem; padding: 1.5rem 0 1.8rem; }
+.faro-entry-number { color: #8a6723; font-family: monospace; font-size: .72rem; }
+.faro-entry h2 { font-size: 1.2rem; font-weight: 500; letter-spacing: -.02em; line-height: 1.15; margin: 0; }
+.faro-entry p { color: #53606b; font-size: .92rem; line-height: 1.65; margin: 0; max-width: 680px; }
+.faro-checklist { display: grid; gap: 2.5rem; }
+.faro-checklist ol { list-style: none; margin: 0; padding: 0; }
+.faro-checklist li { border-top: 1px solid var(--faro-line); display: grid; gap: .3rem; padding: 1rem 0; }
+.faro-checklist li strong { color: var(--faro-gold); font-weight: 500; }
+.faro-checklist li span { color: var(--faro-muted); font-size: .9rem; }
+.faro-footer { border-top: 1px solid var(--faro-line); display: grid; gap: 2rem; padding-bottom: 2rem; }
+.faro-footer p { color: var(--faro-muted); font-size: .8rem; line-height: 1.5; margin: 1rem 0 0; }
+.faro-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+.faro-tags span { border: 1px solid var(--faro-line); border-radius: 999px; color: var(--faro-muted); font-size: .72rem; padding: .5rem .7rem; }
+.faro-disclaimer { border-top: 1px solid var(--faro-line); padding-top: 1.25rem; }
+
+@media (min-width: 700px) {
+  .faro-topbar { padding-left: 2.5rem; padding-right: 2.5rem; }
+  .faro-nav { display: flex; }
+  .faro-hero { align-items: center; grid-template-columns: 1.1fr .9fr; padding: 7rem 2.5rem 8rem; }
+  .faro-table-art { min-height: 480px; }
+  .faro-table-art::before { height: 420px; width: 420px; }
+  .faro-card { height: 220px; width: 150px; }
+  .faro-card-back { left: calc(50% - 115px); }
+  .faro-card-front { left: calc(50% - 30px); }
+  .faro-intro, .faro-checklist, .faro-footer { grid-template-columns: .8fr 1.4fr .8fr; padding-left: 2.5rem; padding-right: 2.5rem; }
+  .faro-checklist { grid-template-columns: 1fr 1fr; }
+  .faro-footer { grid-template-columns: .8fr 1.5fr .7fr; }
+  .faro-footer .faro-disclaimer { border-top: 0; border-left: 1px solid var(--faro-line); padding-left: 1.25rem; padding-top: 0; }
+  .faro-keywords { padding: 6rem 2.5rem; }
+  .faro-entry { grid-template-columns: 4rem 1fr 1fr; gap: 1rem; }
+  .faro-entry h2 { font-size: 1.35rem; }
+}
